@@ -12,7 +12,7 @@
 
 namespace simple_http_server {
 
-std::string to_string(HttpMethod method) {
+std::string to_string(const HttpMethod method) {
   switch (method) {
     case HttpMethod::GET:
       return "GET";
@@ -33,11 +33,11 @@ std::string to_string(HttpMethod method) {
     case HttpMethod::PATCH:
       return "PATCH";
     default:
-      return std::string();
+      return {};
   }
 }
 
-std::string to_string(HttpVersion version) {
+std::string to_string(const HttpVersion version) {
   switch (version) {
     case HttpVersion::HTTP_0_9:
       return "HTTP/0.9";
@@ -48,7 +48,7 @@ std::string to_string(HttpVersion version) {
     case HttpVersion::HTTP_2_0:
       return "HTTP/2.0";
     default:
-      return std::string();
+      return {};
   }
 }
 
@@ -81,7 +81,7 @@ std::string to_string(HttpStatusCode status_code) {
     case HttpStatusCode::BadGateway:
       return "Bad Gateway";
     default:
-      return std::string();
+      return {};
   }
 }
 
